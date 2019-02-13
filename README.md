@@ -1,5 +1,11 @@
 # code review group 운영방안
 
+![mit license](https://img.shields.io/badge/license-MIT-green.svg)
+![vue](https://img.shields.io/badge/like-Vue.js-blue.svg)
+![react](https://img.shields.io/badge/like-React.js-blue.svg)
+![angular](https://img.shields.io/badge/like-Angular.js-blue.svg)
+![code-review](https://img.shields.io/badge/fight-code__review-red.svg)
+
 >### 대상
 - JavaScript, React.js, Vue.js, Node.js, Angular.js 등 사용자
 - 프론트엔드개발관련종사자 (특히 주니어 개발자 또는 예비개발자)
@@ -26,9 +32,20 @@
 - 초반 사람이 일정인원이상 모일때까지는 온라인으로 자유롭게 진행
 - 사람이 모이게되면 지역별로 혹은 주제별로 한달에 한번정도 오프라인으로 만나 발표진행
 
+## 시작하기전에 읽어보기
+- [코드리뷰문화](https://cimfalab.github.io/deepscan/2016/08/code-review-1?fbclid=IwAR1o49xVWcKiuWQ5HEjY8Z9sTBn0ODJdMexNlNv6s1a8GQ-OsXjMW_u8ucg)
+- [git flow](https://danielkummer.github.io/git-flow-cheatsheet/index.ko_KR.html)
+- [Naver Open Source Guide](https://naver.github.io/OpenSourceGuide/book/)
+- [git tip!](https://tech.10000lab.xyz/git/git-tips-you-need.html?fbclid=IwAR3tMDzSw_In8N3PqwvhgF9ga21la09CM85T8SNLuYG8n-6eoFGMcEOrJRc)
+
+
+
 
 ## 카카오톡 오픈채팅방
+- [카카오톡 오픈채팅방](https://open.kakao.com/o/gGNSoNeb)
 
 ## slack
 
+
 ## github
+- [github repogitory](https://github.com/kangyongseok/js-code-review-group)

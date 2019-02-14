@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR|Roboto');
+
+body {
+  background: #f1f1f1;
+}
+
+* {
+  font-size:100%;
+  font-family: 'Roboto','Noto Sans KR', sans-serif;
+  box-sizing: border-box;
+}

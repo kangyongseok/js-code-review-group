@@ -1,38 +1,32 @@
-const todo_create_input = document.querySelector('.js-todo-create');
-const todo_create_btn = document.querySelector('.js-create-btn');
-const todo_list_div = document.querySelector('.js-todo-list');
-const todo_list_ul = todo_list_div.children[0];
-const todo_list_li = document.createElement('li');
+// 스크립트에 필요한 엘리먼트 변수지정
+// string 은 "", variable 은 ''
+const todo_form = document.querySelector('.js-todo-form')
+const todo_input = document.querySelector('.js-todo-input');
+const todo_ul = document.querySelector('.js-todo-ul');
+const todo_li = document.createElement('li');
 
-
-resetInput = () => {
-  todo_create_input.value = '';
+let setLocalStorage = (text) => {
+  localStorage.setItem(JSON.stringify("todos", text))
 }
 
-setTodoList = (text) => {
-  let create_li = todo_list_ul.appendChild(todo_list_li);
-  text === '' ? false : create_li.innerText = text;
+
+// input value reset
+let resetInput = () => {
+  todo_input.value = "";
 }
 
-getTodoText = () => {
-  return todo_create_input.value;
-}
-
-init = () => {
-  todo_create_btn.addEventListener('click', (e) => {
-    e.preventDefault();
-    let getTodo = getTodoText();
-    setTodoList(getTodo);
-    resetInput();
+// todo에 입력된값 가져오기
+let getTodoText = () => {
+  todo_form.addEventListener('submit', (e) => {
+    e.preventDefault(); // 기본 이벤트 초기화
+    console.log(todo_input.value);
+    resetInput()
+    setLocalStorage(todo_input.value)
   })
 }
 
-init()
+let init = () => {
+  getTodoText()
+}
 
-// todo_create_btn.addEventListener('click', (e) => {
-//   e.preventDefault();
-//   let todo_text = todo_create_input.value;
-//   let create_li = todo_list_ul.appendChild(todo_list_li);
-//   create_li.innerText = todo_text;
-//   todo_create_input.value = '';
-// })
+init()

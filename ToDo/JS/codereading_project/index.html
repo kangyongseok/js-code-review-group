@@ -4,24 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Create ToDo</title>
-  <link rel="stylesheet" href="./css/reset.css">
+  <title>JavaScript ToDoList</title>
+  <link rel="stylesheet" href="./css//reset.css">
   <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
   <div class="wrap">
-    <div class="todo-create">
-      <h1>Codereading ToDo</h1>
-      <input type="text" class="create-input js-todo-create" placeholder="오늘의 할일을 입력하세요">
-      <button type="button" class="btn js-create-btn">Enter</button>
+    <div class="todo-input-area">
+      <h1>JavaScript ToDo</h1>
+      <form class="js-todo-form">
+        <input type="text" placeholder="할일을 입력하세요" class="todo-add-input js-todo-input">
+      </form>
     </div>
-    <div class="todo-list js-todo-list">
-      <ul>
-
-      </ul>
+    <div class="todo-list">
+      <ul class="todo-ul js-todo-ul"></ul>
     </div>
   </div>
-
-  <script src="./js/TodoCreateInput.js"></script>
+  <script src="./js/TodoCreateList.js"></script>
 </body>
 </html>

@@ -3,33 +3,35 @@ const todoInput = document.querySelector('.js-todo-input');
 const todoUl = document.querySelector('.js-todo-ul');
 
 let todos = [];
-let completes = null;
+let completes = [];
+let id = 0;
 
-saveCompletes = () => {
-  localStorage.setItem("completes", JSON.stringify(completes));
+// common btn 추가
+addBtn = (li) => {
+  const btnDelete = document.createElement("button");
+  btnDelete.innerText = "❌";
+  btnDelete.classList.add("delete");
+  btnDelete.id = id;
+  id += 1;
+  li.appendChild(btnDelete);
+  btnDelete.addEventListener("click", deleteToDo);
 }
 
-handleSubmit = async (e) => {
-  e.preventDefault();
-  await addToDo();
-  todoInput.value = "";
-  console.log(todos)
+deleteToDo = (e) => {
+  // 화면에서 지우기
+  e.target.parentNode.remove();
+  // 배열에서 지우기
+  const deleteData = e.target.parentNode.firstChild.data;
+  const delIndex = todos.indexOf(deleteData);
+  todos.splice(delIndex, 1);
+  saveLocalToDos();
   completes = todos;
   saveCompletes();
 }
 
-addToDo = () => {
-  const li = document.createElement("li");
-  const todoText = todoInput.value;
-  li.innerText = todoText;
-  todoUl.appendChild(li);
-  pushToDos(todoText);
-}
-
-pushToDos = (text) => {
-  todos.push(text);
-  console.log(todos);
-  saveLocalToDos();
+// LocalStorage 관련
+saveCompletes = () => {
+  localStorage.setItem("completes", JSON.stringify(completes));
 }
 
 saveLocalToDos = () => {
@@ -43,7 +45,9 @@ getLocalToDos = () => {
     getData.forEach(list => {
       const li = document.createElement("li");
       li.innerText = list;
+      li.name=list;
       todoUl.appendChild(li);
+      addBtn(li);
     })
   }
 
@@ -55,11 +59,34 @@ getLocalToDos = () => {
   }
 }
 
+// 기능추가 함수들
+handleSubmit = async (e) => {
+  e.preventDefault();
+  await addToDo();
+  todoInput.value = "";
+  completes = todos;
+  saveCompletes();
+}
+
+addToDo = () => {
+  const li = document.createElement("li");
+  const todoText = todoInput.value;
+  li.innerText = todoText;
+  li.name=todoText;
+  addBtn(li);
+  todoUl.appendChild(li);
+  pushToDos(todoText);
+}
+
+pushToDos = (text) => {
+  todos.push(text);
+  saveLocalToDos();
+}
+
+
 init = () => {
   getLocalToDos();
   todoForm.addEventListener("submit", handleSubmit);
-  console.log(todos)
-  console.log(completes)
 }
 
 init();

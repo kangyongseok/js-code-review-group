@@ -82,3 +82,17 @@ body {
 .todo-list ul li:hover span {
   opacity: 1;
 }
+
+.todo-list ul li {
+  display: flex;
+  align-items: center;
+}
+
+.delete {
+  background: none;
+  border:none;
+  outline: none;
+  cursor: pointer;
+  font-size:1rem;
+  margin-left:auto;
+}

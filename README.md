@@ -62,6 +62,7 @@
 - [git flow](https://danielkummer.github.io/git-flow-cheatsheet/index.ko_KR.html)
 - [Naver Open Source Guide](https://naver.github.io/OpenSourceGuide/book/)
 - [git tip!](https://tech.10000lab.xyz/git/git-tips-you-need.html?fbclid=IwAR3tMDzSw_In8N3PqwvhgF9ga21la09CM85T8SNLuYG8n-6eoFGMcEOrJRc)
+- [git 초보의 pull request](https://wayhome25.github.io/git/2017/07/08/git-first-pull-request-story/)
 
 ## 카카오톡 오픈채팅방
 
@@ -90,6 +91,41 @@
   깃헙에서는 프로젝트별로 폴더를 생성해두고 샘플파일을 업로드 해 놓을건데 같은 방식으로 포크를하여 해당프로젝트에 개인폴더를 생성하고 프로젝트를 진행 업로드 해주시면 됩니다.
 
   최대한 상세한 주석과 왜 이렇게 작성했는지 어떤 어려움이 있었는지도 README.md 를 만들어 스펙과 세부사항을 적어 올려주시면 더 자세한 리뷰를 받으실 수 있습니다.
+
+
+## 참여 및 기여 방법
+
+1. `Fork `를통해 자신의 깃헙으로 복사해갑니다.
+2. `git clone` 레포지토리주소 명령어로 로컬에 다운받고 연결합니다.
+3. `git flow` 를 사용할거기때문에 `git flow init` 을 하고 기본세팅을 진행합니다.
+    ```
+    Branch name for production releases: [master] 
+    Branch name for "next release" development: [develop] 
+
+    How to name your supporting branch prefixes?
+    Feature branches? [] feature/
+    Bugfix branches? [] bugfix/
+    Release branches? [] release/
+    Hotfix branches? [] hotfix/
+    Support branches? [] 
+    Version tag prefix? [] 
+    ```
+4. 해당작업을 완료하고나면 `js-code-review-group git:(master)` => `js-code-review-group git:(develop)` 으로 바뀌었을겁니다.
+5. `master` 브랜치는 직접 건들이지 않고 `develop` 브런치에서 새로운 브런치를 생성해서 본인의 작업을 진행합니다.
+6. 이때 브런치의 명이 중복되지않도록 `자신의닉네임_project` 로 폴더명 통일성을 지켜주세요 이유는 보기좋으니까 입니다.
+7. 새로운 브런치생성은 `git flow feature start` 브랜치이름 으로 새 브런치를 생성합니다.
+8. 작업을 마치면 `git add` => `git commit` => `git push feature/branchName` 으로 생성한 로컬브런치에 푸시를 완료하고
+9. `git checkout develop` 으로 develop 브런치로 이동하여 `git pull` 을 통해 로컬브런치를 최신상태로 유지하고
+9. 다시 `feature` 브런치로 돌아와 `git rebase -i develop` 을 통해 최신상태의 `develop` 브런치와의 재정렬을 하고 충돌난 부분을 수정합니다.
+9. `git push --force` 로 수정된 작업들을 다시 최신상태로 업데이트하고 
+9. `git flow feature finish branchName` 을 하면 `develop` 으로 작업한 기능을 게시하게 됩니다. `(js-code-review-group git:(develop) 브런치로 다시 되돌아오게됩니다.)`
+10. `git push` 를 통해 로컬에서 리모트영역으로 푸쉬를 진행합니다.
+11. 이후 pull 리퀘스트를 `master`가 아닌 `develop` 브런치로 요청해주시면 됩니다.
+
+위와같은 방법으로 git 을 진행하는 이유는 최대한 실무와 연관성있도록 푸쉬하기 위함입니다.  
+개개인이 각자 폴더를 생성하여 푸쉬하기때문에 충돌가능성은 거의 전무하지만 실무에서는 협업하다보면 충돌이 반드시 발생하게됩니다.  
+git 의 자세한 명령어와 git flow 에 관한 디테일한 내용은 직접 습득해보시기 바랍니다. 도움되는 링크는 시작하기전에 읽어보기 부분을 참고해 주시기 바랍니다.
+
 
 
 기타 문의사항 및 개선사항 여기서 함께 해 보았으면 하는 프로젝트가 있다면 [메일](kangyongsuek@gmail.com) 로 연락 주시기 바랍니다.  

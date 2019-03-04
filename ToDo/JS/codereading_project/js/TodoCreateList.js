@@ -6,6 +6,29 @@ let todos = [];
 let completes = [];
 let id = 0;
 
+
+// 클릭시 완료목록으로 표시 line-through
+lineThrough = (li) => {
+  li.addEventListener('click', (e) => {
+    e.target.classList = "line-through"
+  })
+}
+
+
+// 삭제 기능 추가
+deleteToDo = (e) => {
+  // 화면에서 지우기
+  e.target.parentNode.remove();
+  // 배열에서 지우고 로컬스토리지에 저장
+  const deleteData = e.target.parentNode.firstChild.data;
+  const delIndex = todos.indexOf(deleteData);
+  todos.splice(delIndex, 1);
+  saveLocalToDos();
+  completes = todos;
+  saveCompletes();
+}
+
+
 // common btn 추가
 addBtn = (li) => {
   const btnDelete = document.createElement("button");
@@ -17,28 +40,18 @@ addBtn = (li) => {
   btnDelete.addEventListener("click", deleteToDo);
 }
 
-deleteToDo = (e) => {
-  // 화면에서 지우기
-  e.target.parentNode.remove();
-  // 배열에서 지우기
-  const deleteData = e.target.parentNode.firstChild.data;
-  const delIndex = todos.indexOf(deleteData);
-  todos.splice(delIndex, 1);
-  saveLocalToDos();
-  completes = todos;
-  saveCompletes();
-}
-
 // LocalStorage 관련
 saveCompletes = () => {
   localStorage.setItem("completes", JSON.stringify(completes));
 }
 
+// todos 배열변수를 로컬스토리지에 저장
 saveLocalToDos = () => {
   const stringTodos = JSON.stringify(todos);
   localStorage.setItem("todos", stringTodos)
 }
 
+// 로컬스토리지에 저장된 todos 배열을 다시 가져와 리스트로 생성
 getLocalToDos = () => {
   const getData = JSON.parse(localStorage.getItem("todos"));
   if(getData !== null) {
@@ -48,6 +61,7 @@ getLocalToDos = () => {
       li.name=list;
       todoUl.appendChild(li);
       addBtn(li);
+      lineThrough(li);
     })
   }
 
@@ -59,7 +73,7 @@ getLocalToDos = () => {
   }
 }
 
-// 기능추가 함수들
+// 서브밋 이벤트가 발생했을때 실행할 함수 
 handleSubmit = async (e) => {
   e.preventDefault();
   await addToDo();
@@ -74,6 +88,7 @@ addToDo = () => {
   li.innerText = todoText;
   li.name=todoText;
   addBtn(li);
+  lineThrough(li);
   todoUl.appendChild(li);
   pushToDos(todoText);
 }

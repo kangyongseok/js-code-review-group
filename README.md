@@ -63,6 +63,7 @@
 - [Naver Open Source Guide](https://naver.github.io/OpenSourceGuide/book/)
 - [git tip!](https://tech.10000lab.xyz/git/git-tips-you-need.html?fbclid=IwAR3tMDzSw_In8N3PqwvhgF9ga21la09CM85T8SNLuYG8n-6eoFGMcEOrJRc)
 - [git 초보의 pull request](https://wayhome25.github.io/git/2017/07/08/git-first-pull-request-story/)
+- [기본적인 코딩 스타일 가이드](https://kangyongseok.github.io/life/coding-style/)
 
 ## 카카오톡 오픈채팅방
 

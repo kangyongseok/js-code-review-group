@@ -96,8 +96,12 @@
 
 ## 참여 및 기여 방법
 
+> clone git  
+
 1. `Fork `를통해 자신의 깃헙으로 복사해갑니다.
 2. `git clone` 레포지토리주소 명령어로 로컬에 다운받고 연결합니다.
+3. `$ git remote add real-blog(별명) https://github.com/kangyongseok/kangyongseok.github.io` 로 원본 프로젝트 저장소를 원격저장소로 추가합니다.
+4. `git remote -v` 로 연결여부를 확인가능합니다.
 3. `git flow` 를 사용할거기때문에 `git flow init` 을 하고 기본세팅을 진행합니다.
     ```
     Branch name for production releases: [master] 
@@ -111,17 +115,26 @@
     Support branches? [] 
     Version tag prefix? [] 
     ```
-4. 해당작업을 완료하고나면 `js-code-review-group git:(master)` => `js-code-review-group git:(develop)` 으로 바뀌었을겁니다.
-5. `master` 브랜치는 직접 건들이지 않고 `develop` 브런치에서 새로운 브런치를 생성해서 본인의 작업을 진행합니다.
-6. 이때 브런치의 명이 중복되지않도록 `자신의닉네임_project` 로 폴더명 통일성을 지켜주세요 이유는 보기좋으니까 입니다.
-7. 새로운 브런치생성은 `git flow feature start` 브랜치이름 으로 새 브런치를 생성합니다.
-8. 작업을 마치면 `git add` => `git commit` => `git push feature/branchName` 으로 생성한 로컬브런치에 푸시를 완료하고
+
+>git flow 사용한 브런치 생성
+
+1. 해당작업을 완료하고나면 `js-code-review-group git:(master)` => `js-code-review-group git:(develop)` 으로 바뀌었을겁니다.
+2. `master` 브랜치는 직접 건들이지 않고 `develop` 브런치에서 새로운 브런치를 생성해서 본인의 작업을 진행합니다.
+3. 이때 브런치의 명이 중복되지않도록 `자신의닉네임_project` 로 폴더명 통일성을 지켜주세요 이유는 보기좋으니까 입니다.
+4. 새로운 브런치생성은 `git flow feature start 브랜치이름`  으로 새 브런치를 생성합니다.
+
+
+>pull request
+
+1. 작업을 마치면 `git add` => `git commit` => `git push feature/branchName` 으로 생성한 로컬브런치에 푸시를 완료하고
 9. `git checkout develop` 으로 develop 브런치로 이동하여 `git pull` 을 통해 로컬브런치를 최신상태로 유지하고
 9. 다시 `feature` 브런치로 돌아와 `git rebase -i develop` 을 통해 최신상태의 `develop` 브런치와의 재정렬을 하고 충돌난 부분을 수정합니다.
 9. `git push --force` 로 수정된 작업들을 다시 최신상태로 업데이트하고 
-9. `git flow feature finish branchName` 을 하면 `develop` 으로 작업한 기능을 게시하게 됩니다. `(js-code-review-group git:(develop) 브런치로 다시 되돌아오게됩니다.)`
+9. `git flow feature finish branchName` 을 하면 `develop` 으로 작업한 기능을 게시하게 됩니다. `(js-code-review-group git:(develop) 브런치로 다시 되돌아오게됩니다.)` 생성했던 브런치는 삭제됩니다.
 10. `git push` 를 통해 로컬에서 리모트영역으로 푸쉬를 진행합니다.
 11. 이후 pull 리퀘스트를 `master`가 아닌 `develop` 브런치로 요청해주시면 됩니다.
+
+
 
 위와같은 방법으로 git 을 진행하는 이유는 최대한 실무와 연관성있도록 푸쉬하기 위함입니다.  
 개개인이 각자 폴더를 생성하여 푸쉬하기때문에 충돌가능성은 거의 전무하지만 실무에서는 협업하다보면 충돌이 반드시 발생하게됩니다.  

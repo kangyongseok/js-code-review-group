@@ -100,7 +100,7 @@
 
 1. `Fork `를통해 자신의 깃헙으로 복사해갑니다.
 2. `git clone` 레포지토리주소 명령어로 로컬에 다운받고 연결합니다.
-3. `$ git remote add real-blog(별명) https://github.com/kangyongseok/kangyongseok.github.io` 로 원본 프로젝트 저장소를 원격저장소로 추가합니다.
+3. `$ git remote add real-blog(별명) https://github.com/kangyongseok/js-code-review-group.git` 로 원본 프로젝트 저장소를 원격저장소로 추가합니다.
 4. `git remote -v` 로 연결여부를 확인가능합니다.
 3. `git flow` 를 사용할거기때문에 `git flow init` 을 하고 기본세팅을 진행합니다.
     - [git flow 설치방법](https://danielkummer.github.io/git-flow-cheatsheet/index.ko_KR.html)

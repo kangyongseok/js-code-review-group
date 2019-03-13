@@ -1,0 +1,8 @@
+node_modules
+build
+.*
+*.svg
+*.log
+*.md
+*.lock
+public

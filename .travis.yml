@@ -1,0 +1,24 @@
+sudo: false
+language: node_js
+node_js:
+  - "11.10.1"
+env:
+  - CI=true
+
+cache:
+  directories:
+    - node_modules # NPM packages
+
+before_install:
+  - cd ToDo/React/wickedev_project
+
+
+# command to install dependencies
+install:
+  - npm ci
+
+# command to run tests
+script:
+  - npm run test
+  - npm run lint
+  - npm run build

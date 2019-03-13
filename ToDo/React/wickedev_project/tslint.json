@@ -11,5 +11,8 @@
         "semicolon": [true, "never"],
         "prettier": true
     },
-    "rulesDirectory": []
+    "rulesDirectory": [],
+    "linterOptions": {
+        "exclude": ["**/*.d.ts"]
+    }
 }

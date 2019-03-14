@@ -6,6 +6,7 @@
         "@babel/core": "7.2.2",
         "@svgr/webpack": "4.1.0",
         "@types/jest": "24.0.11",
+        "@types/lodash": "^4.14.123",
         "@types/node": "11.11.3",
         "@types/react": "16.8.8",
         "@types/react-dom": "16.8.2",
@@ -35,7 +36,10 @@
         "jest-pnp-resolver": "1.0.2",
         "jest-resolve": "23.6.0",
         "jest-watch-typeahead": "^0.2.1",
+        "lodash": "^4.17.11",
         "mini-css-extract-plugin": "0.5.0",
+        "mobx": "^5.9.0",
+        "mobx-react-lite": "^1.1.1",
         "optimize-css-assets-webpack-plugin": "5.0.1",
         "pnp-webpack-plugin": "1.2.1",
         "postcss-flexbugs-fixes": "4.1.0",
@@ -52,6 +56,7 @@
         "terser-webpack-plugin": "1.2.2",
         "typescript": "3.3.3333",
         "url-loader": "1.1.2",
+        "uuid": "^3.3.2",
         "webpack": "4.28.3",
         "webpack-dev-server": "3.1.14",
         "webpack-manifest-plugin": "2.0.4",
@@ -67,13 +72,9 @@
     "eslintConfig": {
         "extends": "react-app"
     },
-    "browserslist": [
-        ">0.2%",
-        "not dead",
-        "not ie <= 11",
-        "not op_mini all"
-    ],
+    "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"],
     "devDependencies": {
+        "@types/uuid": "^3.4.4",
         "husky": "^1.3.1",
         "lint-staged": "^8.1.5",
         "node-sass": "^4.11.0",
@@ -119,24 +120,13 @@
             "tslint -c tslint.json --fix",
             "git add"
         ],
-        "*.{json,css,scss}": [
-            "prettier --write",
-            "git add"
-        ],
-        "ignore": [
-            "config",
-            "scripts"
-        ]
+        "*.{json,css,scss}": ["prettier --write", "git add"],
+        "ignore": ["config", "scripts"]
     },
     "jest": {
-        "collectCoverageFrom": [
-            "src/**/*.{js,jsx,ts,tsx}",
-            "!src/**/*.d.ts"
-        ],
+        "collectCoverageFrom": ["src/**/*.{js,jsx,ts,tsx}", "!src/**/*.d.ts"],
         "resolver": "jest-pnp-resolver",
-        "setupFiles": [
-            "react-app-polyfill/jsdom"
-        ],
+        "setupFiles": ["react-app-polyfill/jsdom"],
         "testMatch": [
             "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
             "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,ts,tsx}"
@@ -175,8 +165,6 @@
         ]
     },
     "babel": {
-        "presets": [
-            "react-app"
-        ]
+        "presets": ["react-app"]
     }
 }

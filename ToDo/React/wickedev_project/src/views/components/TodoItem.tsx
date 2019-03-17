@@ -8,15 +8,20 @@ import styles from '~/views/components/TodoItem.module.scss'
 export const TodoItem = observer(({ todo }: { todo: ITodo }) => {
     const todos = useContext(TodosContext)
 
-    function onClickRemove(e: React.SyntheticEvent) {
-        e.preventDefault()
+    function onClickMoveUp(e: React.SyntheticEvent) {
+        todos.moveDown(todo)
+    }
+
+    function onClickMoveDown() {
+        todos.moveUp(todo)
+    }
+
+    function onClickRemove() {
         todos.remove(todo)
     }
 
-    const onClickItem = (e: React.SyntheticEvent) => {
-        e.preventDefault()
+    const onClickItem = () => {
         todo.isDone = !todo.isDone
-        console.log(todo.isDone)
     }
 
     const doneStyle = (isDone?: boolean) => {
@@ -24,9 +29,20 @@ export const TodoItem = observer(({ todo }: { todo: ITodo }) => {
     }
 
     return (
-        <li onClick={onClickItem}>
-            <span className={doneStyle(todo.isDone)}>{todo.title}</span>{' '}
-            <button onClick={onClickRemove}>x</button>
+        <li>
+            <div className={styles.container}>
+                <span
+                    onClick={onClickItem}
+                    className={styles.text + ' ' + doneStyle(todo.isDone)}
+                >
+                    {todo.title}
+                </span>{' '}
+                <span className={styles.buttons}>
+                    <button onClick={onClickMoveUp}>▲</button>
+                    <button onClick={onClickMoveDown}>▼</button>
+                    <button onClick={onClickRemove}>x</button>
+                </span>
+            </div>
         </li>
     )
 })

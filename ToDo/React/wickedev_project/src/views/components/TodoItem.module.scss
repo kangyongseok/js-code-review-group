@@ -1,3 +1,19 @@
+.container {
+    display: flex;
+    width: 100%;
+}
+
 .done {
     text-decoration-line: line-through;
+}
+
+.text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.buttons {
+    display: flex;
+    margin-left: auto;
 }

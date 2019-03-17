@@ -11,8 +11,9 @@ export const TodoList = observer(() => {
 
     return (
         <div className={styles.container}>
+            <strong className={styles.title}>Todo list</strong>
             <TodoPlaceHolder />
-            <ul>
+            <ul className={styles.list}>
                 {todos.list.map(todo => (
                     <TodoItem key={todo.uid} todo={todo} />
                 ))}

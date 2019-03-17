@@ -5,5 +5,5 @@ import { TodosContext } from '~/stores/todos'
 
 export function TodoPlaceHolder() {
     const todos = useContext(TodosContext)
-    return isEmpty(todos.list) ? <p>nothing any on todos</p> : null
+    return isEmpty(todos.list) ? <p>Nothing on the todo list.</p> : null
 }

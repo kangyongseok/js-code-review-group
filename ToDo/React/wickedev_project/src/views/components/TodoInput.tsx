@@ -27,6 +27,7 @@ export function TodoInput() {
                 className={styles.input}
                 type={'text'}
                 value={text}
+                placeholder={'Please fill your todo item'}
                 onChange={e => {
                     setText(e.target.value)
                 }}

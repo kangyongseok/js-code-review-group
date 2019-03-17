@@ -7,7 +7,7 @@ export class Todos {
     @observable public list: ITodo[] = []
 
     public remove(todo: ITodo) {
-        remove(this.list, todo)
+        remove(todo).on(this.list)
     }
 }
 

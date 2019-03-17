@@ -1,4 +1,8 @@
-export function remove(array: any[], target: any) {
-    const idx = array.indexOf(target)
-    array.splice(idx, 1)
+export function remove<T>(target: T): { on: (array: T[]) => void } {
+    return {
+        on: (array: T[]) => {
+            const idx = array.indexOf(target)
+            array.splice(idx, 1)
+        }
+    }
 }

@@ -1,5 +1,3 @@
-import { func } from 'prop-types'
-
 export function remove<T>(target: T): { on: (array: T[]) => void } {
     return {
         on: (array: T[]) => {

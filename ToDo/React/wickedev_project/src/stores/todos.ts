@@ -1,10 +1,10 @@
 import { observable } from 'mobx'
 import React from 'react'
-import { ITodo } from '~/entities/todo'
+import { ITodo } from '~/models/entities/todo'
 import { remove } from '~/utils'
 
 export class Todos {
-    @observable public list: ITodo[] = []
+    @observable public readonly list: ITodo[] = []
 
     public remove(todo: ITodo) {
         remove(todo).on(this.list)

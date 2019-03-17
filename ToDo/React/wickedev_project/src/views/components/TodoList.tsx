@@ -6,12 +6,16 @@ import { TodoItem } from '~/views/components/TodoItem'
 import styles from '~/views/components/TodoList.module.scss'
 import { TodoPlaceHolder } from '~/views/components/TodoPlaceholder'
 
+function Title() {
+    return <strong className={styles.title}>Todo list</strong>
+}
+
 export const TodoList = observer(() => {
     const todos = useContext(TodosContext)
 
     return (
         <div className={styles.container}>
-            <strong className={styles.title}>Todo list</strong>
+            <Title />
             <TodoPlaceHolder />
             <ul className={styles.list}>
                 {todos.list.map(todo => (

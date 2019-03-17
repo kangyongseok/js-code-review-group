@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react-lite'
 import React from 'react'
 import { useContext } from 'react'
-import { ITodo } from '~/entities/todo'
+import { ITodo } from '~/models/entities/todo'
 import { TodosContext } from '~/stores/todos'
 import styles from '~/views/components/TodoItem.module.scss'
 

@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 2px 1px -1px rgba(0, 0, 0, 0.12);
+    border: 0;
+    padding: 1rem;
+}
+
+.title {
+    margin: 0.2rem;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+}
+
+.input {
+    margin: 0.2rem;
+}
+
+.error {
+    $error: #ff5546;
+    color: $error;
+    font-size: 10pt;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.button {
+    width: 100%;
+}
